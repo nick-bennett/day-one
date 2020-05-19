@@ -11,11 +11,13 @@ public class TemperatureConversion {
       double tempCelsius = 100;
       double tempFahrenheit = 32;
       System.out.println("Celsius " + tempCelsius + " = " + convertC2F(tempCelsius) + " Fahreheit");
-      System.out.println("Fahrenheit " + tempFahrenheit + " = " + convertF2C(tempFahrenheit) + " Celsius");
+      System.out.println(
+          "Fahrenheit " + tempFahrenheit + " = " + convertF2C(tempFahrenheit) + " Celsius");
     } else {
       for (int i = 0; i < args.length; i++) {
         double tempCelsius = Double.parseDouble(args[i]);
-        System.out.println("Celsius " + tempCelsius + " = " + convertC2F(tempCelsius) + " Fahreheit");
+        System.out
+            .println("Celsius " + tempCelsius + " = " + convertC2F(tempCelsius) + " Fahreheit");
       }
     }
   }
@@ -36,6 +38,16 @@ public class TemperatureConversion {
       fahrenheitTemperatures[i] = fahrenheit;
     }
     return fahrenheitTemperatures;
+  }
+
+  public static double[] convertF2C(double[] fahrenheitTemperatures) {
+    double[] celsiusTemperatures = new double[fahrenheitTemperatures.length];
+    for (int i = 0; i < fahrenheitTemperatures.length; i++) {
+      double fahrenheit = fahrenheitTemperatures[i];
+      double celsius = convertF2C(fahrenheit);
+      celsiusTemperatures[i] = celsius;
+    }
+    return celsiusTemperatures;
   }
 
 }
